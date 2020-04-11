@@ -30,8 +30,11 @@ function addEmployee() {
     allEmployees.push(employeeObject);
 
     displayEmployee();
+    totalMonthlyCost();
 
 }
+
+console.log(allEmployees);
 
 function displayEmployee() {
     let tableElement = $('#oneEmployeeRow')
@@ -47,6 +50,8 @@ function displayEmployee() {
     $('#idNumber').val('');
     $('#jobTitle').val('');
     $('#annualSalary').val('');
+
+    deleteEmployee();
 }
 
 function totalMonthlyCost() {
@@ -55,6 +60,16 @@ function totalMonthlyCost() {
         monthlyCosts += monthlySalary;
     }
 
+    if(monthlyCosts > 20000) {
+        $('#totalCosts').css('color', 'red');
+    }
+
     $('#totalCosts').empty();
     $('#totalCosts').append(monthlyCosts);
+}
+
+function deleteEmployee() {
+    $('.clickDeleteButton').on('click', function() {
+        $(this).closest('tr').remove();
+    })
 }
