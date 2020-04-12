@@ -1,6 +1,7 @@
 $(document).ready(readyNow);
 
 let allEmployees = [];
+let maxCost = 20000;
 
 function readyNow() {
     //console.log('JQ READY');
@@ -60,7 +61,7 @@ function totalMonthlyCost() {
         monthlyBudget += Number(allEmployees[i].salary) / 12;
     }
 
-    if(monthlyBudget > 20000) {
+    if(monthlyBudget > maxCost) {
         $('#totalCosts').css('color', 'red');
         $('.total').css('color', 'red');
     }
