@@ -2,7 +2,7 @@
 
 ## Description
 
-    Determine your monthly costs when taking into account your all of your employees annual salary. 
+    Determine your monthly costs when taking into account all of your employees annual salary. 
 
 ## Usage
 
