@@ -1,7 +1,6 @@
 $(document).ready(readyNow);
 
 let allEmployees = [];
-let monthlyCosts = 0;
 
 function readyNow() {
     //console.log('JQ READY');
@@ -30,7 +29,7 @@ function addEmployee() {
     allEmployees.push(employeeObject);
 
     displayEmployee();
-    totalMonthlyCost();
+    //totalMonthlyCost();
 
 }
 
@@ -40,7 +39,7 @@ function displayEmployee() {
     tableElement.empty();
 
     for (let employee of allEmployees) {
-        tableElement.append('<tr class="employeesInfo"><td class="inputedRows">' + employee.fName + '</td><td class="inputedRows">' + employee.lName + '</td><td class="inputedRows">' + employee.id + '</td><td class="inputedRows">' + employee.title + '</td><td class="inputedRows">' + '$' + employee.salary + '</td><td class="buttonSpot"><button class="clickDeleteButton">Delete</button></tr>');
+        tableElement.append('<tr class="employeesInfo"><td class="inputedRows">' + employee.fName + '</td><td class="inputedRows">' + employee.lName + '</td><td class="inputedRows">' + employee.id + '</td><td class="inputedRows">' + employee.title + '</td><td class="inputedRows salaryClass">' + '$' + employee.salary + '</td><td class="buttonSpot"><button class="clickDeleteButton">Delete</button></tr>');
     }
 
     $('#firstName').val('');
@@ -49,30 +48,57 @@ function displayEmployee() {
     $('#jobTitle').val('');
     $('#annualSalary').val('');
 
+    totalMonthlyCost();
     deleteEmployee();
 }
 
 function totalMonthlyCost() {
+
+    let monthlyBudget = 0;
+
     for (let i = 0; i < allEmployees.length; i++) {
-        let monthlySalary = allEmployees[i].salary / 12;
-        monthlyCosts += monthlySalary;
+        monthlyBudget += Number(allEmployees[i].salary) / 12;
     }
 
-    if(monthlyCosts > 20000) {
+    if(monthlyBudget > 20000) {
         $('#totalCosts').css('color', 'red');
+        $('.total').css('color', 'red');
     }
 
     $('#totalCosts').empty();
-    $('#totalCosts').append(monthlyCosts);
+    $('#totalCosts').append(monthlyBudget);
+    
 }
 
 function deleteEmployee() {
+    
+    //event listener for the delete button
     $('.clickDeleteButton').on('click', function() {
+        
+        //deletes the entire row of the delete button
         $(this).closest('tr').remove();
 
+        //gets the salary info from the deleted item
+        let item = $(this).closest('tr').find('.salaryClass').text();
 
+        //turns the deleted salary into a number
+        item = Number(item.slice(1));
+        //console.log(item);
+
+        //turns the salary into monthly
+        let subtractMonthlySalary = item / 12;
+        
+        console.log(subtractMonthlySalary);
+
+        //gets the current total monthly costs and turns it into a number
+        let currentMonthlyCosts = Number($('#totalCosts').text());
+
+        let newTotal = currentMonthlyCosts - subtractMonthlySalary;
+        
+        console.log(newTotal);
+    
+        $('#totalCosts').empty();
+        $('#totalCosts').append(newTotal);
 
     })
 }
-
-console.log(allEmployees);

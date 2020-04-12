@@ -19,11 +19,12 @@
         <input class="inputs" type="text" id="lastName" placeholder="Employee Last Name"/>
         <input class="inputs" type="text" id="idNumber" placeholder="ID Number"/>
         <input class="inputs" type="text" id="jobTitle" placeholder="Job Title"/>
-        <input class="inputs" type="text" id="annualSalary" placeholder="Annual Salary"/>
+        <input class="inputs" type="number" id="annualSalary" placeholder="Annual Salary"/>
         <button id="submitInfo">Submit</button>
     </div>
 
     <div>
+        <h3>Current Employees: </h3>
         <table class="employeeTable">
             <thead>
                 <tr class="tableHeadings">
@@ -39,7 +40,7 @@
             </tbody>
         </table>
     </div>
-    <h3 class="total">Total Monthly Costs: <span id="totalCosts">0</span></h3>
+    <h3 class="total">Total Monthly Costs: $<span id="totalCosts"></span></h3>
     
 </body>
 </html>
