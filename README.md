@@ -2,7 +2,7 @@
 
 ## Description
 
-    This program allows you to add your employees to a roster to determine what your monthly costs will be taking into account your employees annual salary. 
+    Determine your monthly costs when taking into account your all of your employees annual salary. 
 
 ## Usage
 
