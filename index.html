@@ -10,14 +10,16 @@
 
 </head>
 <body>
-    <h1>Salary Calculator</h1>
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
     <h2>Add Employee</h2>
     <div class="inputFields">
-        <input type="text" id="firstName" placeholder="Employee First Name"/>
-        <input type="text" id="lastName" placeholder="Employee Last Name"/>
-        <input type="text" id="idNumber" placeholder="ID Number"/>
-        <input type="text" id="jobTitle" placeholder="Job Title"/>
-        <input type="text" id="annualSalary" placeholder="Annual Salary"/>
+        <input class="inputs" type="text" id="firstName" placeholder="Employee First Name"/>
+        <input class="inputs" type="text" id="lastName" placeholder="Employee Last Name"/>
+        <input class="inputs" type="text" id="idNumber" placeholder="ID Number"/>
+        <input class="inputs" type="text" id="jobTitle" placeholder="Job Title"/>
+        <input class="inputs" type="text" id="annualSalary" placeholder="Annual Salary"/>
         <button id="submitInfo">Submit</button>
     </div>
 
@@ -25,28 +27,19 @@
         <table class="employeeTable">
             <thead>
                 <tr class="tableHeadings">
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>ID Number</th>
-                    <th>Job Title</th>
-                    <th>Annual Salary</th>
-                    <th>Delete?</th>
+                    <th class="individualHeadings">First Name</th>
+                    <th class="individualHeadings">Last Name</th>
+                    <th class="individualHeadings">ID</th>
+                    <th class="individualHeadings">Job Title</th>
+                    <th class="individualHeadings">Annual Salary</th>
+                    <th class="deleteColumn individualHeadings">Delete</th>
                 </tr>
             </thead>
             <tbody id="oneEmployeeRow">
             </tbody>
         </table>
     </div>
-    <h3>Total Monthly Costs: <span id="totalCosts">0</span></h3>
+    <h3 class="total">Total Monthly Costs: <span id="totalCosts">0</span></h3>
     
 </body>
 </html>
-
-<!-- <tr class="eachRow" id="rowOfEmployeeInfo"> -->
-    <!-- <td id="employeeFirstName">FIRST</td> -->
-    <!-- <td id="employeeLastName">LAST</td> -->
-    <!-- <td id="employeeIDNumber">ID</td> -->
-    <!-- <td id="employeeTitle">TITLE</td> -->
-    <!-- <td id="employeeSalary">SALARY</td> -->
-    <!-- <td id="possiblyDelete"><button id="deleteButton">DELETE</button></td> -->
-<!-- </tr> -->

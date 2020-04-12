@@ -1,9 +1,62 @@
+header {
+    background-color: darkslateblue;
+    width: 100%;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    padding-top: 40px;
+    color: ghostwhite;
+}
+
 .employeeTable {
     margin-top: 30px;
     width: 100%;
+    background-color: darkslateblue;
 }
 
 .tableHeadings {
     text-align: left;
+    
 }
 
+.individualHeadings {
+    padding-left: 5px;
+    color: #E6E6FA;
+}
+
+table, th, td {
+    border: 1px solid #E6E6FA;
+}
+
+.deleteColumn {
+    color: darkslateblue;
+}
+
+.inputs {
+    border: 1px solid darkslateblue;
+}
+
+.buttonSpot {
+    text-align: center;
+}
+
+body {
+    background-color:#E6E6FA;
+}
+
+.total {
+    text-align: right;
+    padding-top: 20px;
+}
+
+.employeesInfo {
+    color: #E6E6FA;
+}
+
+.inputedRows {
+    padding-left: 5px;
+}

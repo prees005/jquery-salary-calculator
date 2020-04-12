@@ -34,15 +34,13 @@ function addEmployee() {
 
 }
 
-console.log(allEmployees);
-
 function displayEmployee() {
     let tableElement = $('#oneEmployeeRow')
 
     tableElement.empty();
 
     for (let employee of allEmployees) {
-        tableElement.append('<tr class="employeesInfo"><td>' + employee.fName + '</td><td>' + employee.lName + '</td><td>' + employee.id + '</td><td>' + employee.title + '</td><td>' + employee.salary + '</td><td><button class="clickDeleteButton">Delete</button></tr>');
+        tableElement.append('<tr class="employeesInfo"><td class="inputedRows">' + employee.fName + '</td><td class="inputedRows">' + employee.lName + '</td><td class="inputedRows">' + employee.id + '</td><td class="inputedRows">' + employee.title + '</td><td class="inputedRows">' + '$' + employee.salary + '</td><td class="buttonSpot"><button class="clickDeleteButton">Delete</button></tr>');
     }
 
     $('#firstName').val('');
@@ -71,5 +69,10 @@ function totalMonthlyCost() {
 function deleteEmployee() {
     $('.clickDeleteButton').on('click', function() {
         $(this).closest('tr').remove();
+
+
+
     })
 }
+
+console.log(allEmployees);
